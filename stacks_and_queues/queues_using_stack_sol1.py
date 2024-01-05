@@ -69,7 +69,7 @@ class newQueue:
     def print(self):
         print("**********")
         print(f"Main stack = {self.main_stack.stack_list}")
-        print(f"New stack = {self.new_stack.stack_size}")
+        print(f"New stack = {self.new_stack.stack_list}")
 
 
 if __name__ == "__main__":

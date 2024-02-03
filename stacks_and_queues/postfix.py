@@ -50,6 +50,7 @@ Time complexity:
 
 Since we traverse the string of n characters once, the time complexity for this algorithm is O(n).
 """
+
 from Stack import MyStack
 
 
@@ -69,4 +70,4 @@ def eval_postfix(expression):
 
 
 if __name__ == "__main__":
-    print("Result of expression (921*-8-4+) : " + str(eval_postfix("921*-8-4+")))
+    print("Result of expression (942+*6147/+*) : " + str(eval_postfix("942+*6147/+*")))

@@ -44,7 +44,7 @@ the min() function truly works in O(1).
 """
 
 from Stack import MyStack
-
+import pandas as pd
 
 class MinStack:
     def __init__(self):

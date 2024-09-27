@@ -32,16 +32,15 @@ vertex.
 """
 
 
-
-
 from Graph import Graph
 from my_queue import MyQueue
+
 
 def bfs_traversal(graph, source):
     queue = MyQueue()
     queue.enqueue(source)
     result = []
-    visited = [0]*graph.vertices
+    visited = [0] * graph.vertices
     while not queue.is_empty():
         vertex = queue.dequeue()
         print(f"vertex: {vertex}")
@@ -57,7 +56,7 @@ def bfs_traversal(graph, source):
     return result
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     graph = Graph(4)
     graph.add_edge(0, 1)
     graph.add_edge(0, 2)

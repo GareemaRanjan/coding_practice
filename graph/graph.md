@@ -128,3 +128,7 @@ The level-wise expansion ensures that for any starting vertex, you can reach all
 The DFS algorithm is the opposite of BFS in the sense that it grows **depth-wise**.
 
 Starting from any node, we keep moving to an adjacent node until we reach the farthest level. Then we move back to the starting point and pick another adjacent node. Once again, we probe to the farthest level and move back. This process continues until all nodes are visited.
+
+![img.png](images/img_6.png)
+![img.png](images/img_7.png)
+![img.png](images/img_8.png)

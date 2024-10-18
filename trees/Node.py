@@ -147,6 +147,7 @@
 # - If it has two children, find the inorder successor (or predecessor), swap values, and
 #   delete the successor (which will be a simpler case).
 
+
 class Node:
     def __init__(self, value):
         self.val = value
@@ -224,5 +225,55 @@ class Node:
         else:
             return True
 
-    def delete(self, value):
+    def delete(self, val):
+        if val < self.val:
+            if self.leftChild:
+                self.leftChild = self.leftChild.delete(val)
+            else:
+                print(f"value not found")
+                return self
+        elif val > self.val:
+            if self.rightChild:
+                self.rightChild = self.rightChild.delete(val)
+            else:
+                print(f"value not found")
+                return self
+        else:
+            if not self.leftChild and not self.rightChild:
+                self = None
+                return None
+            elif not self.leftChild:
+                tmp = self.rightChild
+                self.leftChild = None
+                return tmp
+            elif not self.rightChild:
+                tmp = self.leftChild
+                self.rightChild = None
+                return tmp
+            else:
+                # 1. From the given node to be deleted, find either the node with the smallest value in the right
+                # sub-tree or the node with the largest value in the left sub-tree. Suppose you want to find the
+                # smallest value in the right sub-tree; you do this by moving on to every node’s left child until
+                # the last left child is reached.
+                #
+                # 2. Replace the node to be deleted with the node found (the smallest node in the right sub-tree or the
+                # largest node in the left sub-tree).
+                #
+                # 3. Finally, delete the node found (the smallest in the right sub-tree).
 
+                #  Q. In the delete function, why are we only looking in the right-subtree for the smallest value
+                #  in the node-with-two-children case?
+                #
+                #  A. Because that node is one of the nodes that can replace the node to be deleted and still keep
+                #  the BST properties
+                #
+
+                current = self.rightChild
+
+                while current.leftChild is not None:
+                    current = current.leftChild
+                self.val = current.val
+                current.val = val
+                self.rightChild = self.rightChild.delete(val)
+
+        return self

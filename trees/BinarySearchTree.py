@@ -28,3 +28,7 @@ class BinarySearchTree:
             return self.root.search_recursive(val)
         else:
             return False
+
+    def delete(self, val):
+        if self.root:
+            self.root.delete(val)

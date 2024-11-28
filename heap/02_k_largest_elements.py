@@ -15,8 +15,6 @@ def find_k_largest(nums, k):
     # Push all elements of the array into the max heap
     max_heap.buildHeap(nums)
 
-    k_largest = []
-
     # Extract the k largest elements from the max heap
 
     k_largest = [max_heap.removeMax() for i in range(k)]

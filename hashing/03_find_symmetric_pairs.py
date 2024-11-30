@@ -26,19 +26,20 @@ Space complexity
 The space complexity of this solution is O(n) because we are using the set to store pairs, where n is the number of
 pairs in the list.
 """
+
+
 def find_symmetric(nums):
     res = []
     reverse_list = set()
     for pair in nums:
-
-        if tuple(pair) in reverse_list: ## done in O(1) for sets
+        if tuple(pair) in reverse_list:  ## done in O(1) for sets
             res.append([pair[0], pair[1]])
             res.append([pair[1], pair[0]])
         else:
-            reverse_list.add((pair[1], pair[0])) ## you can only add tup[les to sets
-
+            reverse_list.add((pair[1], pair[0]))  ## you can only add tup[les to sets
 
     return res
+
 
 def main():
     test_cases = [
@@ -46,15 +47,16 @@ def main():
         [[1, 2], [2, 1], [3, 4], [5, 5], [6, 7]],
         [[1, 9], [9, 1]],
         [[1, 2], [3, 4], [5, 6]],
-        [[-8, -4], [7, 7], [1, 1], [2, 2], [-4, -8]]
+        [[-8, -4], [7, 7], [1, 1], [2, 2], [-4, -8]],
     ]
     i = 1
     for case in test_cases:
         print(i, ".\tInput list: ", case, sep="")
         symmetric = find_symmetric(case)
         print("\n\tSymmetric pairs: ", symmetric)
-        print("-"*100)
-        i+=1
+        print("-" * 100)
+        i += 1
+
 
 if __name__ == "__main__":
     main()

@@ -115,6 +115,7 @@ class HashTable:
         # If key does not exist
         return
 
+
 if __name__ == "__main__":
     table = HashTable()  # Create a HashTable
     print(table.is_empty())

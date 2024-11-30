@@ -35,6 +35,8 @@ The space complexity of the algorithm is O(n), where n is the number of elements
 it will have all the elements in it.
 
 """
+
+
 def find_sub_zero(lst):
     ht = dict()
     total_sum = 0
@@ -51,12 +53,14 @@ def find_sub_zero(lst):
 
 
 def main():
-    inputs = [[10, 4, 10, -56, 23, 7, 2, -2, 9],
-              [-3, 3],
-              [2, -5, -4, 43, 2],
-              [-7, 1, 2, 5, -6, 1, -3, 3, -17],
-              [25, 50, 75, 100, 400],
-              [2, -3, -2, 4, -3, 1, 6, -6, 7, 8]]
+    inputs = [
+        [10, 4, 10, -56, 23, 7, 2, -2, 9],
+        [-3, 3],
+        [2, -5, -4, 43, 2],
+        [-7, 1, 2, 5, -6, 1, -3, 3, -17],
+        [25, 50, 75, 100, 400],
+        [2, -3, -2, 4, -3, 1, 6, -6, 7, 8],
+    ]
 
     for i in range(len(inputs)):
         print(i + 1, ".\tArray: ", inputs[i], sep="")

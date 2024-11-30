@@ -5,12 +5,18 @@ where a, b, c, and dbare unique elements within the array. If there are multiple
 Time Complexity: O(n²)
 
 """
+
+
 def find_pairs(nums):
-    my_dict = {}  # Initialize an empty dictionary to store the sums and corresponding pairs
+    my_dict = (
+        {}
+    )  # Initialize an empty dictionary to store the sums and corresponding pairs
 
     # Step 1: Generate all possible pairs and store their sums
     for i in range(0, len(nums)):
-        for j in range(i + 1, len(nums)):  # Check all pairs of nums[i] and nums[j] where i < j
+        for j in range(
+            i + 1, len(nums)
+        ):  # Check all pairs of nums[i] and nums[j] where i < j
             # If this sum already exists in the dictionary, append the pair to the list
             if my_dict.get(nums[i] + nums[j]):
                 my_dict.get(nums[i] + nums[j]).append([nums[i], nums[j]])
@@ -31,7 +37,7 @@ def main():
         [1, 2, 3, 5, 8],  # Example 2
         [10, 20, 30, 40, 50, 60, 70, 5, 65, 15, 25],  # Example 3
         [-5, -3, -1, 0, 2, 4, 6],  # Example 4
-        [0, 1, 2, 3, 4, 99]  # Example 5
+        [0, 1, 2, 3, 4, 99],  # Example 5
     ]
 
     # Iterate through each test case

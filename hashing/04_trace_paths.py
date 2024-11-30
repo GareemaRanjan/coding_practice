@@ -63,7 +63,9 @@ def trace_path(paths):
 
     # Step 5: Reconstruct the journey by following the paths
     while start and start != end:  # Continue until we reach the end city
-        res.append([start, my_dict.get(start)])  # Add the current pair to the result list
+        res.append(
+            [start, my_dict.get(start)]
+        )  # Add the current pair to the result list
         start = my_dict.get(start)  # Move to the next city by following the path
 
     return res  # Return the reconstructed path
@@ -71,14 +73,40 @@ def trace_path(paths):
 
 # Example inputs
 paths = [
-    [["New York", "Chicago"], ["Boston", "Texas"], ["Missouri", "New York"], ["Texas", "Missouri"]],
-    [["Sydney", "Dubai"], ["LosAngeles", "Cairo"], ["Paris", "Rome"], ["Cairo", "Paris"], ["Rome", "Tokyo"],
-     ["Tokyo", "Sydney"]],
-    [["Vienna", "Athens"], ["London", "Berlin"], ["Madrid", "Rome"], ["Paris", "Vienna"], ["Rome", "Paris"],
-     ["Athens", "Moscow"], ["Berlin", "Madrid"]],
+    [
+        ["New York", "Chicago"],
+        ["Boston", "Texas"],
+        ["Missouri", "New York"],
+        ["Texas", "Missouri"],
+    ],
+    [
+        ["Sydney", "Dubai"],
+        ["LosAngeles", "Cairo"],
+        ["Paris", "Rome"],
+        ["Cairo", "Paris"],
+        ["Rome", "Tokyo"],
+        ["Tokyo", "Sydney"],
+    ],
+    [
+        ["Vienna", "Athens"],
+        ["London", "Berlin"],
+        ["Madrid", "Rome"],
+        ["Paris", "Vienna"],
+        ["Rome", "Paris"],
+        ["Athens", "Moscow"],
+        ["Berlin", "Madrid"],
+    ],
     [["Singapore", "Sydney"]],
-    [["HongKong", "Taipei"], ["Osaka", "Seoul"], ["Taipei", "Singapore"], ["Tokyo", "Osaka"], ["Beijing", "Shanghai"],
-     ["Seoul", "Beijing"], ["Singapore", "KualaLumpur"], ["Shanghai", "HongKong"]]
+    [
+        ["HongKong", "Taipei"],
+        ["Osaka", "Seoul"],
+        ["Taipei", "Singapore"],
+        ["Tokyo", "Osaka"],
+        ["Beijing", "Shanghai"],
+        ["Seoul", "Beijing"],
+        ["Singapore", "KualaLumpur"],
+        ["Shanghai", "HongKong"],
+    ],
 ]
 
 # Test cases

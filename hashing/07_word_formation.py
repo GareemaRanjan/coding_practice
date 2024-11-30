@@ -45,12 +45,14 @@ Space complexity
 The space complexity of this solution is O(n), where n is the number of elements in words_list. This is because the
 hash table takes n space to store the words.
 """
+
+
 def is_formation_possible(words_list, target):
     my_list = set(words_list)
     for i in range(1, len(target)):
         print(f"{target[0:i]} {target[i:len(target)]}")
         sub1 = target[0:i]
-        sub2 = target[i:len(target)]
+        sub2 = target[i : len(target)]
         if sub1 in my_list and sub2 in my_list:
             return True
 
@@ -58,11 +60,13 @@ def is_formation_possible(words_list, target):
 
 
 def main():
-    words_list = [["flower", "moon", "plant", "sun", "star"],
-                  ["sand", "water", "fly"],
-                  ["paper", "pen", "book", "page", "note", "pencil"],
-                  ["door", "light", "window", "balcony", "attic", "roof"],
-                  ["bow", "rain"]]
+    words_list = [
+        ["flower", "moon", "plant", "sun", "star"],
+        ["sand", "water", "fly"],
+        ["paper", "pen", "book", "page", "note", "pencil"],
+        ["door", "light", "window", "balcony", "attic", "roof"],
+        ["bow", "rain"],
+    ]
     targets = ["sunflower", "waterfall", "notebook", "lighthouse", "rainbow"]
 
     for i in range(len(words_list)):
